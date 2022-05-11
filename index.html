@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="”en”">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: 'AIzaSyBzOJr4LSaWUHWBfoZXGHrUAN0c2YcK_q8',
+      authDomain: 'ujc2022-34589.firebaseapp.com',
+      databaseURL:
+        'https://ujc2022-34589-default-rtdb.europe-west1.firebasedatabase.app',
+      projectId: 'ujc2022-34589',
+      storageBucket: 'ujc2022-34589.appspot.com',
+      messagingSenderId: '694788096411',
+      appId: '1:694788096411:web:54dac6bcb1ba00df06a13e',
+      measurementId: 'G-MHD030XP3V'
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    // var database = firebase.database()
+
+    function ledOn() {
+      firebase.database().ref('SALA').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff() {
+      firebase.database().ref('SALA').set({
+        estado: 'DESLIGADA'
+      })
+    }
+  </script>
+  <script src="app.js" defer></script>
+  <body>
+    <header>
+      <img src="ujc.PNG" width="120" />
+      <h1>TME Education</h1>
+      <h2>Universidade Joaquim Chissano</h2>
+      <h2>Curso de Arduino nivel II (IoT)</h2>
+    </header>
+    <h1>Controle remoto de iluminacao</h1>
+    <fieldset>
+      <legend>Sala</legend>
+      <div>
+        <button class="led-on" onclick="ledOn()">Ligar</button>
+        <button class="led-off" onclick="ledOff()">Desligar</button>
+      </div>
+    </fieldset>
+    <br />
+    <footer>
+      <p>
+        <strong> TME Education Mozambique </strong>
+      </p>
+    </footer>
+  </body>
+</html>
