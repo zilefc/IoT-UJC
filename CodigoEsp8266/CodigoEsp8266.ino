@@ -1,8 +1,12 @@
-#include<FirebaseArduino.h>
+#include <ESP8266WiFi.h>
+#include <SoftwareSerial.h>
+#include <FirebaseArduino.h>
+#include <ArduinoJson.h>
+#include <ESP8266HTTPClient.h>
 
-#define FIREBASE_HOST ""
-#define FIREBASE_AUTH ""
-#define WIFI_SSID ""
+#define FIREBASE_HOST "ujc2022-34589-default-rtdb.europe-west1.firebasedatabase.app"
+#define FIREBASE_AUTH "0O7bt2ZSUhU4LrmEu0UcEx51C8UDMnxFJGM9VhXc"
+#define WIFI_SSID "Elite way 2"
 #define WIFI_PASSWORD ""
 
 const int Sala = 0;
@@ -35,7 +39,7 @@ void setup()
 }
 void loop()
 {
-  FirebaseObject sala = Firebase.get(/SALA/);
+  FirebaseObject sala = Firebase.get("/SALA/");
   String LuzSala = sala.getString("estado");
   if (LuzSala == "LIGADA") {
     digitalWrite(Sala, LOW);
