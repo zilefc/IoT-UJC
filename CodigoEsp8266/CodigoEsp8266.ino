@@ -4,10 +4,10 @@
 #include <ArduinoJson.h>
 #include <ESP8266HTTPClient.h>
 
-#define FIREBASE_HOST "ujc2022-34589-default-rtdb.europe-west1.firebasedatabase.app"
-#define FIREBASE_AUTH "0O7bt2ZSUhU4LrmEu0UcEx51C8UDMnxFJGM9VhXc"
-#define WIFI_SSID "Elite way 2"
-#define WIFI_PASSWORD ""
+#define FIREBASE_HOST "ujc2022-cd76a-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH "OGbq8ZfaeJT2uE9aZRvc6AKys1h3qynaJbHMTdbx"
+#define WIFI_SSID "TME Education"
+#define WIFI_PASSWORD "mz123456mpz"
 
 const int Sala = 0;
 
@@ -33,20 +33,21 @@ void setup()
   }
   else {
     Serial.print("Firebase Connected");
+    Firebase.setInt("S1", 0);
   }
 
-  Firebase.setInt("S1", 0);
+  
 }
 void loop()
 {
-  FirebaseObject sala = Firebase.get("/SALA/");
-  String LuzSala = sala.getString("estado");
+  Firebase.setInt("S1", 0);
+  
+  FirebaseObject casa = Firebase.get("/SALA/");
+  String LuzSala = casa.getString("estado");
   if (LuzSala == "LIGADA") {
     digitalWrite(Sala, LOW);
   }
   else if (LuzSala == "DESLIGADA") {
     digitalWrite(Sala, HIGH);
   }
-
- 
 }
