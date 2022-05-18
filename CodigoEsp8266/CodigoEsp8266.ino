@@ -9,7 +9,7 @@
 #define WIFI_SSID "TME Education"
 #define WIFI_PASSWORD "mz123456mpz"
 
-const int Sala = 0;
+const int Sala = 2;
 
 void setup()
 {
@@ -33,14 +33,13 @@ void setup()
   }
   else {
     Serial.print("Firebase Connected");
-    Firebase.setInt("S1", 0);
   }
 
   
 }
 void loop()
 {
-  Firebase.setInt("S1", 0);
+  Firebase.setInt("Teste", random(1,100));
   
   FirebaseObject casa = Firebase.get("/SALA/");
   String LuzSala = casa.getString("estado");
