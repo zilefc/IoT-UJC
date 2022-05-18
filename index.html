@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-
+  <script language="javascript">
+    document.onmousedown = disableclick
+    status = 'Right Click Disabled'
+    function disableclick(e) {
+      if (event.button == 2) {
+        alert(status)
+        return false
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css" />
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
@@ -13,13 +22,13 @@
   <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
   <script>
     const firebaseConfig = {
-      apiKey: "AIzaSyAfjWb7drHAgIK908QRxC0Uci8Us6Qw2Ew",
-  authDomain: "ujc2022-cd76a.firebaseapp.com",
-  databaseURL: "https://ujc2022-cd76a-default-rtdb.firebaseio.com",
-  projectId: "ujc2022-cd76a",
-  storageBucket: "ujc2022-cd76a.appspot.com",
-  messagingSenderId: "181648887726",
-  appId: "1:181648887726:web:38942bf3c482ff8d91823f"
+      apiKey: 'AIzaSyAfjWb7drHAgIK908QRxC0Uci8Us6Qw2Ew',
+      authDomain: 'ujc2022-cd76a.firebaseapp.com',
+      databaseURL: 'https://ujc2022-cd76a-default-rtdb.firebaseio.com',
+      projectId: 'ujc2022-cd76a',
+      storageBucket: 'ujc2022-cd76a.appspot.com',
+      messagingSenderId: '181648887726',
+      appId: '1:181648887726:web:38942bf3c482ff8d91823f'
     }
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig)
