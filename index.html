@@ -44,6 +44,18 @@
         estado: 'DESLIGADA'
       })
     }
+
+    const ledStatus = document.getElementById('led-status')
+
+    firebase.database().ref('SALA/estado').on('value', (snapshot) => {
+      const estado = snapshot.val()
+
+      if (estado === 'LIGADA') {
+        ledStatus.textContent = 'Ligado'
+      } else {
+        ledStatus.textContent = 'Desligado'
+      }
+    })
   </script>
   <script src="app.js" defer></script>
   <body>
@@ -62,6 +74,7 @@
       </div>
     </fieldset>
     <br />
+    <p>Estado do LED: <span id="led-status"></span></p>
     <footer>
       <p>
         <strong> TME Education Mozambique </strong>
