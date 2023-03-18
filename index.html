@@ -30,11 +30,10 @@
     };
     firebase.initializeApp(firebaseConfig);
 
-    const salaRef = firebase.database().ref("SALA");
-    salaRef.on("value", (snapshot) => {
-      const estado = snapshot.val().estado;
-      document.querySelector("#estado-led").textContent = estado;
-    });
+firebase.database().ref("SALA/estado").on("value", snapshot => {
+  document.querySelector("#estado-led").textContent = snapshot.val();
+});
+
 
     function ledOn() {
       firebase.database().ref("SALA").set({
