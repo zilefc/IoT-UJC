@@ -114,3 +114,10 @@ footer {
   color: #8f8f8f;
   font-size: 1.2rem;
 }
+
+#estado-led {
+  font-size: 1.8rem;
+  margin-top: 1.2rem;
+  text-align: center;
+  color: #1b1b1b;
+}
