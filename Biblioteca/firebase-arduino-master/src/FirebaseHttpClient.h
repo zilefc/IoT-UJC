@@ -55,6 +55,6 @@ protected:
 };
 
 static const char kFirebaseFingerprint[] =
-    "CF 6C F8 33 A3 FB 42 4A 49 0A E7 72 24 53 1A 11 A2 C1 34 0D";
+    "91 14 41 84 C3 F8 48 9D 29 56 8C D4 35 43 F6 B8 53 F1 FE FE";
 
 #endif // FIREBASE_HTTP_CLIENT_H
