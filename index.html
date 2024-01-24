@@ -20,14 +20,12 @@
   <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
   <script>
     const firebaseConfig = {
-      apiKey: "AIzaSyAfjWb7drHAgIK908QRxC0Uci8Us6Qw2Ew",
-      authDomain: "ujc2022-cd76a.firebaseapp.com",
-      databaseURL: "https://ujc2022-cd76a-default-rtdb.firebaseio.com",
-      projectId: "ujc2022-cd76a",
-      storageBucket: "ujc2022-cd76a.appspot.com",
-      messagingSenderId: "181648887726",
-      appId: "1:181648887726:web:38942bf3c482ff8d91823f"
-    };
+     apiKey: "AIzaSyAr4acL1Rggci7iRKpTc3bTPN0I1eYts7M",
+    authDomain: "controlo-de-lampada.firebaseapp.com",
+    projectId: "controlo-de-lampada",
+    storageBucket: "controlo-de-lampada.appspot.com",
+    messagingSenderId: "293468996316",
+    appId: "1:293468996316:web:b55eaca5a9b2f08b2daa19"    };
     firebase.initializeApp(firebaseConfig);
 
 firebase.database().ref("SALA/estado").on("value", snapshot => {
